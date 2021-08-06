@@ -1,9 +1,8 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import { route as HomeRoute } from './routes/home';
 import { route as VerificationRoute } from './routes/verification';
-import verifications from './verifications';
-
-const Home = (props) => <h2>Home</h2>;
+import verifications from './data/verifications';
 
 function App() {
   return (
@@ -19,7 +18,7 @@ function App() {
                       verification={verification}/></Route>;
                 })
               }
-              <Route path="/"><Home /></Route>
+              <Route path="/"><HomeRoute /></Route>
             </Switch>
 
             <table>
