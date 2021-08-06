@@ -5,17 +5,25 @@ export const route = (props) => {
     <div>
       <h2>{name}</h2>
       <dl>
-        <dt>ID:</dt>
-        <dd>{id}</dd>
+        <div>
+          <dt>ID:</dt>
+          <dd>{id}</dd>
+        </div>
 
-        <dt>Module:</dt>
-        <dd>{module}</dd>
+        <div>
+          <dt>Module:</dt>
+          <dd>{module}</dd>
+        </div>
 
-        <dt>Created at:</dt>
-        <dd>{createdAt}</dd>
+        <div>
+          <dt>Created at:</dt>
+          <dd>{createdAt}</dd>
+        </div>
 
-        <dt>Modified At:</dt>
-        <dd>{modifiedAt}</dd>
+        <div>
+          <dt>Modified At:</dt>
+          <dd>{modifiedAt}</dd>
+        </div>
       </dl>
     </div>
   );
