@@ -1,8 +1,9 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import { route as VerificationRoute } from './routes/verification';
 import verifications from './verifications';
 
-const Verification = (props) => <h2>{props.verification.name}</h2>;
+const Home = (props) => <h2>Home</h2>;
 
 function App() {
   return (
@@ -14,11 +15,11 @@ function App() {
               {
                 verifications.map(verification => {
                   const href = `/verification/${verification.id}`;
-                  return <Route path={href}><Verification
+                  return <Route path={href}><VerificationRoute
                       verification={verification}/></Route>;
                 })
               }
-              <Route path="/"></Route>
+              <Route path="/"><Home /></Route>
             </Switch>
 
             <table>
@@ -28,9 +29,6 @@ function App() {
                       href = `/verification/${id}`;
                   return <tr>
                     <td><Link to={href}>{name}</Link></td>
-                    <td>{module}</td>
-                    <td>{createdAt}</td>
-                    <td>{modifiedAt}</td>
                   </tr>;
                 })
               }
