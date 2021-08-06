@@ -9,29 +9,32 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Router>
-            <div>
-              <nav>
-                <ul>
-                  {
-                    verifications.map(verification => {
-                      const {id, name} = verification,
-                          href = `/verifications/${id}`;
-                      return <li><Link to={href}>{name}</Link></li>;
-                    })
-                  }
-                </ul>
-              </nav>
-            </div>
-
+            <Link to="/">Home</Link>
             <Switch>
               {
                 verifications.map(verification => {
-                  const href = `/verifications/${verification.id}`;
+                  const href = `/verification/${verification.id}`;
                   return <Route path={href}><Verification
                       verification={verification}/></Route>;
                 })
               }
+              <Route path="/"></Route>
             </Switch>
+
+            <table>
+              {
+                verifications.map(verification => {
+                  const {id, name, module, createdAt, modifiedAt} = verification,
+                      href = `/verification/${id}`;
+                  return <tr>
+                    <td><Link to={href}>{name}</Link></td>
+                    <td>{module}</td>
+                    <td>{createdAt}</td>
+                    <td>{modifiedAt}</td>
+                  </tr>;
+                })
+              }
+            </table>
           </Router>
         </header>
       </div>
